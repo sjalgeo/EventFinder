@@ -1,0 +1,11 @@
+.Events {
+  background-color: #f8f8f8;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  padding: 1rem 10%;
+}
+
+.EventList-container {
+  background-color: #f8f8f8;
+}

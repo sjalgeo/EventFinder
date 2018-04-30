@@ -1,0 +1,45 @@
+.Event {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 16.66rem;
+  margin: 0 .5rem 2.3rem .5rem;
+  transition: 0.3s;
+}
+
+.Event:hover {
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,0.2);
+}
+
+.Event .event-card {
+  padding: 2px 15px 15px 15px;
+  background-color: #ffffff;
+  font-family: Helvetica, Helvetica, Tahoma ,Arial,sans-serif;
+  color: #666a73;
+  border: 1px solid #ddd;
+}
+
+.Event .image-container {
+  height: 16.66rem;
+}
+
+.Event .date-time {
+  margin-top: 8px;
+  margin-bottom: 5px;
+  font-size: 13px;
+  font-weight: 300;
+}
+
+.Event .event-title {
+  margin-top: 0px;
+  margin-bottom: 0px;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.Event .event-address {
+  margin-top: 0px;
+  margin-bottom: 0px;
+  font-size: 16px;
+  font-weight: 400;
+}
