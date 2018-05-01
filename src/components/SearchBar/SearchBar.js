@@ -70,7 +70,7 @@ class SearchBar extends React.Component {
       <div className="Entire-Search-Wrapper">
         <div className="SearchBar">
         <div className="SearchBar-fields">
-          <input className="first-search-bar" placeholder="Search Events" onChange={this.handleQChange} />
+          <input className="first-search-bar" placeholder="Enter Keyword(s)" onChange={this.handleQChange} />
           <input placeholder="Where?" onChange={this.handleLocationChange} />
           <select name="All Dates" onChange={this.handleDateChange}>
             <option value="Today" >Today</option>
