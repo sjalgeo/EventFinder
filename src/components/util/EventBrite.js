@@ -2,7 +2,7 @@ const apiKey = 'BDUSSNPEHZVEED357P';
 
 const EventBrite = {
   search(q, location, date, sortBy) {
-    return fetch(`https://cors-anywhere.herokuapp.com/https://www.eventbriteapi.com/v3/events/https://www.eventbriteapi.com/v3/events/?token=2OHPMQAPHJJPBATY6ECJ`, {
+    return fetch(`https://cors-anywhere.herokuapp.com/https://www.eventbriteapi.com/v3/events/?token=2OHPMQAPHJJPBATY6ECJ`, {
       headers: {
         Authorization: `Bearer ${apiKey}`
       }
