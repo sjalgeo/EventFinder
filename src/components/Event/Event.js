@@ -1,6 +1,5 @@
 import React from 'react';
 import './Event.css';
-import image from './camp-nou.jpg';
 
 
 class Event extends React.Component {
@@ -8,12 +7,12 @@ class Event extends React.Component {
     return (
       <div className="Event">
           <div className="image-container">
-            <img src='{image}' alt=''/>
+            <img src={this.props.event.logo.original.url} alt=''/>
           </div>
           <div className="event-card">
-            <p className="date-time">{this.props.event.start.date},{this.props.event.start.utc},{this.props.event.start.timezone}</p>
+            <p className="date-time">{this.props.events.start.local},</p>
             <div className="event-title">
-              {this.props.event.name.html}
+              {this.props.events.name.text}
             </div>
               <p className="event-address">{this.props.location.address}</p>
           </div>

@@ -11,10 +11,9 @@ const EventBrite = {
     }).then(jsonResponse => {
       if (jsonResponse.events) {
         return jsonResponse.events.map(event => ({
-          date: event.start_date.keyword,
-          time: event.start.utc,
-          timezone: event.start.timezone,
-          title: event.name.html,
+          imageSrc: event.logo.original.url,
+          date: event.start.local,
+          title: event.name.text,
           address: location.address
         }));
       }
