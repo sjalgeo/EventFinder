@@ -11,11 +11,11 @@ const EventBrite = {
           return response.json();
         }).then(jsonResponse => {
       if (jsonResponse.events) {
-        return jsonResponse.event.map(events => ({
-          imageSrc: events.logo.original.url,
-          date: events.start.local,
-          name: events.name.text,
-          address: events.location.address
+        return jsonResponse.events.map(event => ({
+          imageSrc: event.logo.original.url,
+          date: event.start.local,
+          name: event.name.text,
+          address: event.location.address
         }));
       }
     });
