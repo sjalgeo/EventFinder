@@ -15,9 +15,9 @@ class App extends React.Component {
       this.searchEventBrite = this.searchEventBrite.bind(this);
   }
 
-  searchEventBrite(q, location, date, sortBy) {
-    EventBrite.search(q, location, date, sortBy).then(events => {
-      this.setState({events: events});
+  searchEventBrite(q, address, date, sortBy) {
+    EventBrite.search(q, address, date, sortBy).then(response => {
+      this.setState({events: response.events});
     });
   }
 

@@ -6,14 +6,14 @@ class SearchBar extends React.Component {
     super(props);
 
     this.state = {
-      q: '',
-      location: '',
+      term: '',
+      address: '',
       date: '',
       sortBy: 'best'
     };
 
-    this.handleQChange = this.handleQChange.bind(this);
-    this.handleLocationChange = this.handleLocationChange.bind(this);
+    this.handleTermChange = this.handleTermChange.bind(this);
+    this.handleAddressChange = this.handleAddressChange.bind(this);
     this.handleDateChange = this.handleDateChange.bind(this);
     this.handleSortByChange = this.handleSortByChange.bind(this);
     this.handleSearch = this.handleSearch.bind(this);
@@ -36,12 +36,12 @@ class SearchBar extends React.Component {
     this.setState({sortBy: sortByOption});
   }
 
-  handleQChange(event) {
-    this.setState({q: event.target.value});
+  handleTermChange(event) {
+    this.setState({term: event.target.value});
   }
 
-  handleLocationChange(event) {
-    this.setState({location: event.target.value});
+  handleAddressChange(event) {
+    this.setState({address: event.target.value});
   }
 
   handleDateChange(event) {
@@ -49,7 +49,7 @@ class SearchBar extends React.Component {
   }
 
   handleSearch(event) {
-    this.props.searchEventBrite(this.state.q, this.state.location, this.state.date, this.state.sortBy);
+    this.props.searchEventBrite(this.state.term, this.state.address, this.state.date, this.state.sortBy);
 
     event.preventDefault();
   }
@@ -70,15 +70,15 @@ class SearchBar extends React.Component {
       <div className="Entire-Search-Wrapper">
         <div className="SearchBar">
         <div className="SearchBar-fields">
-          <input className="first-search-bar" placeholder="Enter Keyword(s)" onChange={this.handleQChange} />
-          <input placeholder="Where?" onChange={this.handleLocationChange} />
+          <input className="first-search-bar" placeholder="Enter Keyword(s)" onChange={this.handleTermChange} />
+          <input placeholder="Where?" onChange={this.handleAddressChange} />
           <select name="All Dates" onChange={this.handleDateChange}>
-            <option value="Today" >Today</option>
-            <option value="Tomorrow">Tomorrow</option>
-            <option value="This_Week">This Week</option>
-            <option value="Next_Week">Next Week</option>
-            <option value="This_Month">This Month</option>
-            <option value="Next_Month">Next Month</option>
+            <option value="today" >Today</option>
+            <option value="tomorrow">Tomorrow</option>
+            <option value="this_week">This Week</option>
+            <option value="next_week">Next Week</option>
+            <option value="this_month">This Month</option>
+            <option value="next_month">Next Month</option>
           </select>
         </div>
         <div className="SearchBar-submit">

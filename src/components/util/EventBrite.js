@@ -1,47 +1,25 @@
-const apiKey = 'BDUSSNPEHZVEED357P';
-let accessToken;
 
-// Getting a user's access token.
-let EventBrite = {
-  getAccessToken() {
-    if(accessToken){
-      return accessToken;
-    }
-    const accessTokenMatch = window.location.href.match(/access_token=([^&]*)/);
-    const expiresInMatch = window.location.href.match(/expires_in=([^&]*)/);
-    if (accessTokenMatch && expiresInMatch) {
-      accessToken = accessTokenMatch[1];
-      let expiresIn = Number(expiresInMatch[1]);
-      window.setTimeout(() => accessToken = '', expiresIn * 1000);
-      window.history.pushState('Access Token', null, '/'); // clears the parameters, allows to grab a new access token when expires
-      return accessToken;
-    } else {
-      window.location = `https://www.eventbrite.com/oauth/authorize?response_type=token&client_id=BDUSSNPEHZVEED357P`;
-    }
-  },
+const myToken = '2OHPMQAPHJJPBATY6ECJ';
 
- // Fetch events from Eventbrite.
-  search(q, location, date, sortBy) {
-    return fetch(`http://www.eventbriteapi.com/v3/events?token=2OHPMQAPHJJPBATY6ECJ`, {
+const EventBrite = {
+  search(term, address, date, sortBy) {
+    return fetch(`http://www.eventbriteapi.com/v3/events/search?token=2OHPMQAPHJJPBATY6ECJ&q=${term}&location.address=${address}&start_date.keyword=${date}&sort_by=${sortBy}`, {
       headers: {
-        Authorization: `Bearer ${apiKey}`
+        Authorization: `Bearer ${myToken}`
       }
-    }).then(response => {
-      return response.json();
-    }).then(jsonResponse => {
+        }).then(response => {
+          return response.json();
+        }).then(jsonResponse => {
       if (jsonResponse.events) {
         return jsonResponse.events.map(event => ({
           imageSrc: event.logo.original.url,
           date: event.start.local,
-          title: event.name.text,
-          address: location.address
+          name: event.name.text,
+          address: event.location.address
         }));
       }
-      else {
-          return [];
-        }
     });
   }
-};
+}
 
 export default EventBrite;
