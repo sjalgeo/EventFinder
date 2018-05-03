@@ -12,8 +12,10 @@ const EventBrite = {
         }).then(jsonResponse => {
       if (jsonResponse.events) {
         return jsonResponse.event.map(events => ({
+          imageSrc: events.logo.original.url,
           date: events.start.local,
           name: events.name.text,
+          address: events.location.address
         }));
       }
     });

@@ -8,7 +8,7 @@ class Event extends React.Component {
     return (
       <div className="Event">
           <div className="image-container">
-            <img src={this.props.event.logo.original.url} alt=''/>
+            <img src={this.props.events.logo.original.url} alt=''/>
           </div>
           <div className="event-card">
             <p className="date-time">{this.props.events.start.local},</p>
