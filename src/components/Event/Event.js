@@ -4,7 +4,6 @@ import './Event.css';
 
 class Event extends React.Component {
   render() {
-    console.warn(this.props.event);
     return (
       <div className="Event">
           <div className="image-container">
