@@ -15,7 +15,7 @@ const EventBrite = {
           imageSrc: event.logo,
           date: event.start,
           name: event.name,
-          address: event.location.address
+          address: 'No Address Found'
         }));
       }
     });
