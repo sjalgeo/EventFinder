@@ -14,7 +14,7 @@ class Event extends React.Component {
             <div className="event-title">
               {this.props.event.name}
             </div>
-              <p className="event-address">{this.props.location.address}</p>
+              <p className="event-address">{this.props.event.address}</p>
           </div>
       </div>
     );
