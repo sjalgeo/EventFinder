@@ -12,7 +12,7 @@ class Event extends React.Component {
           <div className="event-card">
             <p className="date-time">{this.props.event.start},</p>
             <div className="event-title">
-              {this.props.event.name}
+              {this.props.event.name.text}
             </div>
               <p className="event-address">{this.props.location.address}</p>
           </div>
